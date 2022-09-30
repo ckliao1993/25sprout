@@ -5,8 +5,9 @@
 五大Entity及自行定義的關聯圖如下
 ![資料庫結構](/pics/DB_structure.png)
 
-## 假資料
+## 資料
 
+`php artisan migrate`建立Table
 `php artisan db:seed`會生出測試API所需的所有假資料
 
 ## API
