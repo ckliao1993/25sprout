@@ -15,11 +15,11 @@ class Payment extends Model
 
     public function hasdetails()
     {
-        return $this->hasMany('App\Model\PaymentDetail', 'payment_id');
+        return $this->hasMany('App\Model\PaymentDetail', 'payment_id', 'id');
     }
 
     public function isuser()
     {
-        return $this->hasOne('App\User', 'id', 'user');
+        return $this->hasOne('App\Model\User', 'id', 'user');
     }
 }

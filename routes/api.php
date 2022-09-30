@@ -27,5 +27,10 @@ Route::group([
     Route::post('me', 'AuthController@me');
 });
 
-Route::apiResource('product', 'ProductController');
-Route::apiResource('payment', 'PaymentController');
+Route::get('products', 'ProductController@index')->name('列出所有商品API');
+Route::get('payments', 'PaymentController@index')->name('列出所有訂單API');
+Route::middleware('auth:api')->post('newPayment', 'PaymentController@new')->name('建立訂單API');
+Route::middleware('auth:api')->post('payment/{payment}', 'PaymentController@show')->name('訂單細節API');
+
+// Route::apiResource('product', 'ProductController');
+// Route::apiResource('payment', 'PaymentController');

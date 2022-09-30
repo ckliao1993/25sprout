@@ -89,4 +89,9 @@ class PaymentController extends Controller
     {
         return $this->service->update($payment);
     }
+
+    public function new(Request $request)
+    {
+        return $this->service->new($request);
+    }
 }
