@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Model\Payment;
 use Illuminate\Http\Request;
+use App\Services\PaymentService;
 
 class PaymentController extends Controller
 {
+    protected $service;
+    public function __construct(PaymentService $paymentService)
+    {
+        $this->service = $paymentService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +21,7 @@ class PaymentController extends Controller
      */
     public function index()
     {
-        //
+        return $this->service->index();
     }
 
     /**
@@ -35,7 +42,7 @@ class PaymentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $this->service->store($request);
     }
 
     /**
@@ -46,7 +53,7 @@ class PaymentController extends Controller
      */
     public function show(Payment $payment)
     {
-        //
+        return $this->service->show($payment);
     }
 
     /**
@@ -69,7 +76,7 @@ class PaymentController extends Controller
      */
     public function update(Request $request, Payment $payment)
     {
-        //
+        return $this->service->update($request, $payment);
     }
 
     /**
@@ -80,6 +87,6 @@ class PaymentController extends Controller
      */
     public function destroy(Payment $payment)
     {
-        //
+        return $this->service->update($payment);
     }
 }

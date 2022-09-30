@@ -26,3 +26,6 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 });
+
+Route::apiResource('product', 'ProductController');
+Route::apiResource('payment', 'PaymentController');

@@ -3,6 +3,8 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Model\Product;
+use App\Model\ProductCategory;
 
 class PaymentDetail extends Model
 {
@@ -22,4 +24,11 @@ class PaymentDetail extends Model
     {
         return $this->hasOne('App\Model\Payment', 'id', 'payment_id');
     }
+
+    // public function set($value)
+    // {
+    //     $category = Product::find($this->detail)->value('category');
+    //     $price = ProductCategory::find($category)->value('msrp');
+    //     return $this->subtotal = $price * $this->quantity;
+    // }
 }
