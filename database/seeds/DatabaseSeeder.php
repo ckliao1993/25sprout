@@ -25,13 +25,10 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UsersTableSeeder::class);
         $user = factory(User::class, 3)->create();
+        $user = factory(User::class)->create(['email' => 'test@custom.com',]);
 
         $productCategory = factory(ProductCategory::class, 3)->create()->each(function($category){
             $category->hasproducts()->createMany(factory(Product::class, 3)->make()->toArray());
         });
-
-        // $payment = factory(Payment::class, 3)->create()->each(function($order){
-        //     $order->hasdetails()->createMany(factory(PaymentDetail::class, 3)->make()->toArray());
-        // });
     }
 }
