@@ -8,6 +8,7 @@
 ## 資料
 
 `php artisan migrate`建立Table
+
 `php artisan db:seed`會生出測試API所需的所有假資料
 
 ## API
